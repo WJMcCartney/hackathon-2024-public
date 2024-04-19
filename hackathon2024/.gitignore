@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 /node_modules
-/backend/.venv
+/backend/
 backend/__pycache__/app.cpython-310.pyc
 backend/api/__pycache__/HelloApiHandler.cpython-310.pyc
 *.pyc
