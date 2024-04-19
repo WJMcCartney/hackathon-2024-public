@@ -23,8 +23,11 @@ yarn-debug.log*
 yarn-error.log*
 
 /node_modules
-/backend/
-backend/__pycache__/app.cpython-310.pyc
-backend/api/__pycache__/HelloApiHandler.cpython-310.pyc
+/backend/.venv/bin
+/backend/.venv/include
+/backend/.venv/lib
+/backend/.venv/lib64
+backend/.venv__pycache__/app.cpython-310.pyc
+backend/.venvapi/__pycache__/HelloApiHandler.cpython-310.pyc
 *.pyc
 backend/testing.JSON
