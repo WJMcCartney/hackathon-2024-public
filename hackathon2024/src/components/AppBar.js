@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Box, useTheme, Button, OutlinedInput, Select, FormControl, MenuItem, InputLabel, Paper } from "@mui/material";
+import { AppBar, Toolbar, Box, useTheme, Button, Paper } from "@mui/material";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
@@ -37,19 +37,6 @@ function Footer() {
 
 export default function DefaultAppBar({ children, hideFooter }) {
     let theme = useTheme();
-    const location = useLocation();
-    let { pathname } = location;
-    let currentPage = pathname.replace("/", "");
-    if (currentPage === "YuGiOh") {
-        currentPage = "Yu Gi Oh"
-    } else if (currentPage === "MagicTheGathering") {
-        currentPage = "Magic The Gathering"
-    }
-    const [game, setGame] = React.useState('');
-
-    const handleChange = (event) => {
-        setGame(event.target.value);
-    };
     return (
         <Box
             sx={{
@@ -66,33 +53,6 @@ export default function DefaultAppBar({ children, hideFooter }) {
                     </Button>
                     <Paper sx={{ mr: "150vh" }} />
                     <Box container justifyContent="flex-end" width="10vh" sx={{ display: "flex", alignItems: "right", flex: "auto" }}>
-                        <FormControl fullWidth>
-                            <InputLabel id="Game-Selector">{currentPage}</InputLabel>
-                            <Select
-                                labelId="Game-Selector"
-                                id="Games"
-                                value={game}
-                                input={<OutlinedInput label="Game" />}
-                                onChange={handleChange}
-                            >
-                                <MenuItem sx={{ color: "white" }}>
-                                    <Button variant="contained" href="./MagicTheGathering" sx={{ width: 1 }}>
-                                        Magic The Gathering
-                                    </Button>
-                                </MenuItem>
-                                <MenuItem sx={{ color: "white" }} >
-                                    <Button variant="contained" href="./Pokemon" sx={{ width: 1 }}>
-                                        Pokemon
-                                    </Button>
-                                </MenuItem>
-                                <MenuItem sx={{ color: "white" }} >
-                                    <Button variant="contained" href="./YuGiOh" sx={{ width: 1 }}>
-                                        Yu Gi Oh
-                                    </Button>
-                                </MenuItem>
-
-                            </Select>
-                        </FormControl>
                     </Box>
                 </Toolbar>
             </AppBar>
